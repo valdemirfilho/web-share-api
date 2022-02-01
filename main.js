@@ -13,6 +13,8 @@ function shareText() {
     })
       .then(() => console.log('Compartilhado com sucesso'))
       .catch((error) => console.log('Error sharing', error));
+  } else {
+    console.log("share api not found")
   }
 }
 
