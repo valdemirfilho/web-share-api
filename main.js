@@ -3,7 +3,9 @@ const buttonShare = document.querySelector('#buttonshare')
 function shareTextAndImg() {
   console.log("click") 
   
-  const filesArray = ['./img/cat.jpg']
+  const file = new File([], "./img/cat.jpg", {type: "image/jpeg"})
+
+  const filesArray = [file]
   
   if (navigator.canShare && navigator.canShare({files: filesArray })) {
     console.log('share api ok')
