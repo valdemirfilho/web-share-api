@@ -1,15 +1,18 @@
 const buttonShare = document.querySelector('#buttonshare')
 
-function shareText() {
+function shareTextAndImg() {
   console.log("click") 
   
-  if (navigator.share) {
+  const filesArray = ['./img/cat.jpg']
+  
+  if (navigator.canShare && navigator.canShare({files: filesArray })) {
     console.log('share api ok')
 
     navigator.share({
+      files: filesArray,
       title: 'web.dev',
       text: 'Teste de compartilhamento de texto',
-      utl: 'https://web.dev/'
+      url: 'https://web.dev/'
     })
       .then(() => console.log('Compartilhado com sucesso'))
       .catch((error) => console.log('Error sharing', error));
@@ -18,4 +21,4 @@ function shareText() {
   }
 }
 
-buttonShare.addEventListener('click', shareText)
+buttonShare.addEventListener('click', shareTextAndImg)
