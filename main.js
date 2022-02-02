@@ -3,7 +3,7 @@ const buttonShare = document.querySelector('#buttonshare')
 async function shareTextAndImg() {
   console.log("click") 
   
-  const blob = await fetch('https://valdemirfilho.github.io/web-share-api/img/cat.jpg').then(r=>r.blob())
+  const blob = await fetch('img/cat.jpg').then(r=>r.blob())
   
   const file = new File([blob], "cat.jpg", {type: "image/jpeg"})
 
