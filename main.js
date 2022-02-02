@@ -3,7 +3,9 @@ const buttonShare = document.querySelector('#buttonshare')
 function shareTextAndImg() {
   console.log("click") 
   
-  const file = new File([], "./img/cat.jpg", {type: "image/jpeg"})
+  const blob = await fetch('./img/cat.jpg').then(r=>r.blob())
+  
+  const file = new File([blob], "cat.jpg", {type: "image/jpeg"})
 
   const filesArray = [file]
   
