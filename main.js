@@ -16,7 +16,7 @@ async function shareTextAndImg() {
       files: filesArray,
       title: 'web.dev',
       text: 'Teste de compartilhamento de texto',
-      url: 'https://web.dev/'
+      url: 'https://pedalaki.tk'
     })
       .then(() => console.log('Compartilhado com sucesso'))
       .catch((error) => console.log('Error sharing', error));
